@@ -1,0 +1,20 @@
+.idea #pycharm files
+*.log #ignore all logs
+
+#compiled codes
+.o
+.pyc
+.class
+
+#hidden system file
+.DS_Store
+Thumbs.db
+.Rproj.user
+
+#file copies 
+._*
+*.asv
+
+# Sphinx build output
+docs/_build/
+docs/_autosummary/
