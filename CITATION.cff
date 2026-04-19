@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "fig_tools"
+abstract: "MATLAB figure layout, axes linking, and interactive pan/zoom controls."
+authors:
+  - family-names: Prerau
+    given-names: Michael J.
+    name-suffix: Ph.D.
+    affiliation: "Prerau Laboratory, Brigham and Women's Hospital, Harvard Medical School"
+    orcid: "https://orcid.org/0000-0002-9010-5273"
+type: software
+license: BSD-3-Clause
+url: "https://github.com/preraulab/fig_tools"
+repository-code: "https://github.com/preraulab/fig_tools"
