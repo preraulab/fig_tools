@@ -2,7 +2,7 @@
 
 Figure layout, axes linking, interactive controls — the plumbing for good-looking multi-panel MATLAB figures.
 
-Part of the Prerau Lab [`utils`](https://github.com/preraulab/utils) meta-repository. Can also be used standalone.
+Part of the Prerau Lab [`preraulab_utilities`](https://github.com/preraulab/preraulab_utilities) meta-repository. Can also be used standalone.
 
 ## Layout
 
