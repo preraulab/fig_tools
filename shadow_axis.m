@@ -23,7 +23,6 @@ function [axis_handle, shadow_handle] = shadow_axis(varargin)
 %   See also: fspecial, imfilter
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 % Parse all the inputs
 p = inputParser;

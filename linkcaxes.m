@@ -23,7 +23,6 @@ function linkcaxes(ax)
 %   See also: linkprop, linkaxes, equalize_axes, caxis
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 if nargin == 0
     error('Must provide axis handles');
 end

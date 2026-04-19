@@ -20,7 +20,6 @@ function pos = get_clicks(varargin)
 %   See also: ginput, waitforbuttonpress, iptPointerManager
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 % Set default values for input arguments
 if nargin == 0

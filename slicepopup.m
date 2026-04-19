@@ -25,7 +25,6 @@ function [popfig_h, popax_h]=slicepopup(mainfig_h, mainax_h, x_vals, y_vals, dat
 %   See also: imagesc, windowbuttonmotionfcn
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 %-----------------------------------------------------------
 %                    SETUP POPUP WINDOW
 %-----------------------------------------------------------

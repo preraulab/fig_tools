@@ -23,7 +23,6 @@ function [h_title, axbig] = outertitle(ax, title_str, varargin)
 %   See also: outerlabels, figdesign, title
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin == 0
     figure

@@ -16,7 +16,6 @@ function c = colorbar_noresize(varargin)
 %   See also: colorbar, topcolorbar
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 if nargin==0 || ~strcmpi(class(varargin{1}),'matlab.graphics.axis.Axes')
     ax=gca;
 else

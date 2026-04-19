@@ -33,7 +33,6 @@ function new_axes = stacked_plot(ax, data, x, varargin)
 %   See also: split_axis, scaleline
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 %************************************************************
 %                   INPUT HANDLING

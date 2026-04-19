@@ -23,7 +23,6 @@ function equalize_axes(ax, varargin)
 %   See also: linkaxes, linkprop, linkcaxes
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 if nargin == 0
     %Create a figure with images and plots
     figure

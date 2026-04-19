@@ -23,7 +23,6 @@ function h=pagefig(varargin)
 %   See also: fullfig, figure
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 %Set optional direction input
 p=inputParser;
 p.addOptional('orient', 'portrait', @(x)any(validatestring(x,{'portrait','landscape'})));

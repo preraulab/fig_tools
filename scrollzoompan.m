@@ -35,7 +35,6 @@ function [zslider, pslider, zedit, pedit, zlabel, plabel, zlstnr, plstnr] = scro
 %   See also: zoom, pan, addlistener
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 %% ------------------------- DEFAULT ARGUMENT HANDLING -------------------------
 % If no axis is provided, default to current axis
 if nargin==0, ax = gca; end

@@ -22,7 +22,6 @@ function lab_handle = letter_label(fig_h, ax_h, labstr, labdir, fontsize, gaps)
 %   See also: annotation, outertitle
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 %Set defaults
 if nargin < 1

@@ -18,7 +18,6 @@ function clim_h = clims(ax)
 %   See also: climscale, caxis, linkcaxes
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin==0
     ax=gca;

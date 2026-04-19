@@ -23,7 +23,6 @@ function clims_new = climscale(hObj, ptiles, outliers)
 %   See also: clims, caxis, isoutlier, prctile
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 if nargin == 1
     if isa(hObj,'matlab.graphics.primitive.Image') || isa(hObj,'matlab.graphics.axis.Axes')
         ptiles =[5 98];

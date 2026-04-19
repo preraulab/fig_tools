@@ -18,7 +18,6 @@ function h=fullfig(h)
 %   See also: pagefig, figure
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin==0
     h=figure;

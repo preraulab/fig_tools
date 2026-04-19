@@ -21,7 +21,6 @@ function [lab, c] = topcolorbar(w, h, vgap)
 %   See also: colorbar, get, set
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 colorbar('off');  % Remove any existing colorbars
 axpos = get(gca, 'Position');  % Get the position of the current axes

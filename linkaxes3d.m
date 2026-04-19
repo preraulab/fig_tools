@@ -20,7 +20,6 @@ function linkaxes3d(axs)
 %   See also: linkaxes, linkprop, linkcaxes
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 hlink = linkprop(axs, {'CameraPosition','CameraUpVector'});
 setappdata(axs(1), 'Camera_linkprop', hlink);
 linkaxes(axs, 'xyz');

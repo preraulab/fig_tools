@@ -28,7 +28,6 @@ function [h_xl, h_yl, h_axbig] = outerlabels(ax,xlabel_str,ylabel_str, varargin)
 %   See also: outertitle, figdesign, xlabel, ylabel
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin == 0
     figure

@@ -20,7 +20,6 @@ function [rows, cols] = squarest_subplots(num, landscape)
 %   See also: subplot, figdesign
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin == 1
     landscape = true;  % Default to landscape orientation

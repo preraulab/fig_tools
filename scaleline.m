@@ -21,7 +21,6 @@ function [h_scaleline, h_scalelabel] = scaleline(varargin)
 %   See also: annotation, stacked_plot
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 %************************************************************
 %                   PARSE INPUTS

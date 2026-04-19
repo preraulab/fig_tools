@@ -33,7 +33,6 @@ function axis_handles=figdesign(varargin)
 %   See also: subplot, linkaxes, outerlabels, outertitle
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 %Run demo
 if (nargin==1 && strcmpi(varargin{1},'demo'))
     demo();

@@ -20,7 +20,6 @@ function fh_new = mergefigures(fh1,fh2, ratio, stacking, textshrink)
 %   See also: figdesign, copyobj
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin == 0
     close all;

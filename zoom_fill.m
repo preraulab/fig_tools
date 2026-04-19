@@ -32,7 +32,6 @@ function [h, fill_ax] = zoom_fill(ax_top, ax_bottom, top_range, bottom_range, va
 %   See also: fill, axes, addlistener
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 if nargin == 0
     ax_top = subplot(211);

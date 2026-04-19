@@ -24,7 +24,6 @@ function new_axes = split_axis(varargin)
 %   See also: figdesign, stacked_plot
 %
 %   ∿∿∿  Prerau Laboratory MATLAB Codebase · sleepEEG.org  ∿∿∿
-%        Source: https://github.com/preraulab/labcode_main
 
 %Run interactive mode
 if nargin <= 1
