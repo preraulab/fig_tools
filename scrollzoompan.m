@@ -82,9 +82,17 @@ if isdataax
 end
 
 %% ------------------------- EXPAND FIGURE FOR CONTROLS -------------------------
-% Grow the figure at the bottom so the sliders/edits are added beneath
-% the existing content rather than overlapping it. Existing children are
-% pinned in pixel space so they stay at the same on-screen position.
+% Grow the figure upward so the sliders/edits sit beneath existing content
+% rather than overlapping it. The figure's on-screen anchor (bottom-left)
+% is preserved -- only the top edge moves up.
+%
+% Strategy: switch the figure and every layout-relevant descendant to
+% pixel units before resizing, then restore the original units afterwards.
+% Pixel units are non-scaling, so the resize does not stretch normalized
+% children, and the unit round-trip applies uniformly to descendants
+% gathered via findall (axes' children like colorbars and legends are not
+% in fig.Children but are reached by findall).
+%
 % Only expand once per figure, even if scrollzoompan is called multiple times.
 if ~isappdata(fig_h,'scrollzoompan_expanded')
     setappdata(fig_h,'scrollzoompan_expanded',true);
@@ -97,35 +105,50 @@ if ~isappdata(fig_h,'scrollzoompan_expanded')
     % resized figure matches the normalized layout used below.
     ctrl_h_px = fpos(4) / 9;
 
-    % Record existing children in pixel units so their screen position is preserved
-    kids = fig_h.Children;
-    kid_units = cell(size(kids));
-    kid_pos   = cell(size(kids));
-    for k = 1:numel(kids)
-        c = kids(k);
+    % Gather every descendant whose Position lives in figure-relative
+    % coordinates. fig.Children alone misses legends and colorbars
+    % (children of axes) and anything inside uipanels/tiledlayouts.
+    desc_types = {'axes','uicontrol','colorbar','legend','tiledlayout',...
+                  'uipanel','uibuttongroup','uitabgroup','uitab'};
+    descs = gobjects(0);
+    for ii = 1:numel(desc_types)
+        descs = [descs; findall(fig_h,'type',desc_types{ii})]; %#ok<AGROW>
+    end
+    descs = unique(descs);
+
+    % Pin descendants in absolute pixel space for the duration of the resize
+    saved_units = repmat({''}, numel(descs), 1);
+    for k = 1:numel(descs)
         try
-            if isprop(c,'Units') && isprop(c,'Position') && ~isempty(c.Position)
-                kid_units{k} = c.Units;
-                c.Units = 'pixels';
-                kid_pos{k}   = c.Position;
-            end
+            saved_units{k} = descs(k).Units;
+            descs(k).Units = 'pixels';
         catch
-            kid_units{k} = '';
         end
     end
 
-    % Grow upward only: preserve the figure's on-screen anchor (bottom-left)
-    % and its width, extending the top edge by ctrl_h_px
+    % Enlarge the figure (top edge up by ctrl_h_px, anchor unchanged)
     fig_h.Position = [fpos(1) fpos(2) fpos(3) fpos(4)+ctrl_h_px];
 
-    % Shift each child up by ctrl_h_px inside the figure so the new bottom
-    % strip is free for the controls, then restore original units
-    for k = 1:numel(kids)
-        if ~isempty(kid_units{k})
+    % Shift every descendant up by ctrl_h_px so the new bottom strip is
+    % free for the controls. Done in pixel units so colorbars, legends,
+    % tiledlayouts, etc. all move by the same amount as their parent axes.
+    for k = 1:numel(descs)
+        if ~isempty(saved_units{k})
             try
-                p = kid_pos{k};
-                kids(k).Position = [p(1) p(2)+ctrl_h_px p(3) p(4)];
-                kids(k).Units    = kid_units{k};
+                p = descs(k).Position;
+                descs(k).Position = [p(1) p(2)+ctrl_h_px p(3) p(4)];
+            catch
+            end
+        end
+    end
+
+    % Restore each descendant's original units. Their pixel position is
+    % preserved across the unit change, so the new normalized values
+    % correctly reflect the resized figure.
+    for k = 1:numel(descs)
+        if ~isempty(saved_units{k})
+            try
+                descs(k).Units = saved_units{k};
             catch
             end
         end
