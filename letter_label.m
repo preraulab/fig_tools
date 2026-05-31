@@ -60,14 +60,35 @@ axpos = ax_h.Position;
 W = .05;
 H = .05;
 
-%Set textbox position as a function of direction
+%Set textbox position as a function of direction.
+% The textbox is fixed W x H. Position is clamped to [0, 1] for
+% MATLAB annotation's Position constraint. HorizontalAlignment
+% flips to 'left' (left labels) or 'right' (right labels) when the
+% box would have needed to extend off the figure edge so the
+% visible glyph sits at the box edge nearer the figure boundary
+% rather than saturating at x = W.
+y_pos = max(min(axpos(2) + axpos(4) + gaps(1), 1), 0);
+W_pos = max(min(W, 1), 0);
+H_pos = max(min(H, 1), 0);
 switch lower(labdir)
     case {'left','l'}
-        labpos = max(min([axpos(1)-W-gaps(2), axpos(2)+axpos(4)+gaps(1), W, H],1),0);
-        halign = 'right';
+        box_x_raw = axpos(1) - W - gaps(2);
+        box_x     = max(min(box_x_raw, 1 - W_pos), 0);
+        if box_x_raw < 0
+            halign = 'left';
+        else
+            halign = 'right';
+        end
+        labpos = [box_x, y_pos, W_pos, H_pos];
     case {'right','r'}
-        labpos = max(min([axpos(1)+axpos(3)+gaps(2), axpos(2)+axpos(4)+gaps(1), W, H],1),0);
-        halign = 'left';
+        box_x_raw = axpos(1) + axpos(3) + gaps(2);
+        box_x     = max(min(box_x_raw, 1 - W_pos), 0);
+        if box_x_raw + W > 1
+            halign = 'right';
+        else
+            halign = 'left';
+        end
+        labpos = [box_x, y_pos, W_pos, H_pos];
     otherwise
         error('Label direction must be ''left'' or ''right''');
 end
